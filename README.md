@@ -8,8 +8,8 @@
 - 카페에서 사장님은 메뉴를 추가, 수정, 삭제할 수 있고, 손님들은 메뉴를 조회,주문을 할 수 있다. 주차를 한 손님들은 나갈 때 주차요금도 알 수 있다.
 
 ## image(pixabay 등 무료 이미지 활용)    
-<img src="image1(commit).jpg" alt="image2" style="zoom:50%;" />    
-<img src="image2.jpg" alt="image2" style="zoom:50%;" />   
+<img src="image1(commit).jpg" alt="image2" style="zoom:50%;" />
+<img src="image2(commit).jpg" alt="image2" style="zoom:50%;" />   
 
 ## mini project 가 가지고 있는 대략적인 기능 설명
 
