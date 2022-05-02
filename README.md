@@ -1,7 +1,7 @@
 # TeamProject
 ## mini project 주제
 
-- 카페 주문과 주차관리
+- **카페 주문과 주차관리**
 
 ## mini project 에 대한 소개
 
