@@ -2,6 +2,7 @@ typedef struct {
 	char name[50];
 	char detail[50];
 	int price;
+	char place[2];//포장 or 매장
 } Product;
 
 int createProduct(Product *p); //메뉴를 추가
