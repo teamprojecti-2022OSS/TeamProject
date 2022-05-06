@@ -4,6 +4,7 @@ typedef struct {
 	int price;
 } Product;
 
+int selectMenu();//선택지 제공
 int createProduct(Product *p); //메뉴를 추가
 void readProduct(Product p); //메뉴 조회
 int updateProduct(Product *p); //메뉴 수정
