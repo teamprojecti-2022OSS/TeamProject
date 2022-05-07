@@ -1,23 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int selectMenu() {
-
-	int menu;
-	printf("\n*** 주문 ***\n");
-    	printf("1. 메뉴 조회\n");
-    	printf("2. 메뉴 검색\n");
-    	printf("3. 주문하기\n");
-    	printf("4. 주차 요금 결제\n");
-    	//printf("5. \n");
-    	//printf("6. \n");
-    	//printf("7. \n");
-    	//printf("8. \n");
-    	//printf("0. 종료\n\n");
-    	printf("=> 원하는 메뉴는? ");
-    	scanf("%d", &menu);
-    	return menu;
-}
 
 int main (void) {
 	product plist[50];
