@@ -51,5 +51,5 @@ int deletProduct(Product *p){
 	   
 void saveData(Product *p, int count);
 int loadData(Product *p);
-void searchProductName);
+void searchProductName();
 
