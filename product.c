@@ -49,6 +49,16 @@ int deletProduct(Product *p){
     return 1;
 }
 
+void listProduct(Product *p, int count) {
+	printf("**********************");
+	for(int i=0; i<count; i++) {
+		if (p[i].price == -1) continue;
+
+		printf("\n %d.", i+1);
+		printf("%-15s %-20s %-10d원",p[i].name,p[i].detail,&p[i].price);
+	}
+}
+
 int selectProductNo(Product *p, int count) {
 
 	int num;
