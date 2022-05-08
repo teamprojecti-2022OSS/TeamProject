@@ -5,8 +5,8 @@
 int selectMenu(){
     int menu;
     printf("\n*** 주헌&예준 cafe ***\n");
-    printf("1. 메뉴조회\n");
-    printf("2. 메뉴추가\n");
+    printf("1. 메뉴추가\n");
+    printf("2. 메뉴조회\n");
     printf("3. 메뉴수정\n");
     printf("4. 메뉴삭제\n");
     printf("5. 메뉴저장\n");
