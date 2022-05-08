@@ -60,12 +60,6 @@ if(mode==1){
             else if (menu == 6){
                 searchProductName(plist, index);
             }
-            else if (menu == 7){
-                searchProductPrice(plist, index);
-            }
-            else if (menu == 8){
-                searchProductWeight(plist, index);
-            }
             }
             printf("종료됨!\n");
             return 0;
