@@ -58,7 +58,15 @@ if(mode==1){
                 saveData(plist, index);
             }
             else if (menu == 6){
-                searchProductName(plist, index);
+                int changeOk;
+                printf("비밀번호를 변경하시겠습니까?");
+                scanf("%d",&changeOk);
+                if(changeOk==1)
+                password=changePassword(password);
+                else{
+                printf("=> 취소됨!\n");
+                continue;
+                }
             }
             }
             printf("종료됨!\n");
