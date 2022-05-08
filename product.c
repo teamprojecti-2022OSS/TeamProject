@@ -87,6 +87,16 @@ int loadData(Product *p) {
 
 
 }
-
+int changePassword(int oldPassword){
+    int newPassword,check;
+    do{
+    printf("현재 비밀번호를 입력하시오.");
+    scanf("%d",&check);
+    if(check!=oldPassword) printf("비밀번호가 잘못되었습니다.\n");
+    }while(check!=oldPassword);
+    printf("바꾸실 비밀번호를 입력하시오.(번호로만 설정가능)");
+    scanf("%d",&newPassword);
+    return newPassword;
+}
 void searchProductName();
 
