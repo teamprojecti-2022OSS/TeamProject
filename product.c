@@ -49,7 +49,44 @@ int deletProduct(Product *p){
     return 1;
 }
 	   
-void saveData(Product *p, int count);
-int loadData(Product *p);
+void saveData(Product *p, int count) {
+
+	FILE *fp;
+	fp = fopen("menulist.txt", "wt");
+
+	for(int i=0; i<count; i++) {
+		if(p[i].price == -1) continue;
+		fprintf(fp, "%s\n", p[i].name);
+    		fprintf(fp, "%s\n", p[i].detail);
+    		fprintf(fp, "%d\n",p[i].price);
+	}
+	fclose(fp);
+	printf("=>저장됨!");
+}	
+
+int loadData(Product *p) {
+
+	int i;
+    	FILE *fp;
+        if(fp = fopen("menulist.txt","rt")) {
+        for(i=0; i<100; i++) {
+        fscanf(fp, " %[^\n]", p[i].name);
+        if(feof(fp)) break;
+        fscanf(fp, " %[^\n]", p[i].detail);
+        fscanf(fp, " %d", &p[i].price);
+        }
+
+        fclose(fp);
+        printf("\n=> 로딩 성공!\n");
+        return i;
+        }
+        else {
+        printf("\n=> 파일 없음\n");
+        return 0;
+    }
+
+
+}
+
 void searchProductName();
 
