@@ -34,7 +34,7 @@ void readProduct(Product p){
 }
 	   
 int updateProduct(Product *p){
-    printf("새 메뉴명은? ");
+    printf("새 메뉴명을 입력해주세요 : ");
     scanf("%[^\n]s",p->name);
     getchar();
     printf("새 메뉴를 설명해주세요 : ");
@@ -48,7 +48,28 @@ int deletProduct(Product *p){
     p->price=-1;
     return 1;
 }
-	   
+
+void listProduct(Product *p, int count) {
+	printf("**********************");
+	for(int i=0; i<count; i++) {
+		if (p[i].price == -1) continue;
+
+		printf("\n %d.", i+1);
+		printf("%-15s %-20s %-10d원",p[i].name,p[i].detail,&p[i].price);
+	}
+}
+
+int selectProductNo(Product *p, int count) {
+
+	int num;
+	listProduct(p,count);
+
+	printf("\n원하시는 번호는(취소: 0)? : ");
+	scanf("%d", &num);
+	return num;
+
+}
+
 void saveData(Product *p, int count) {
 
 	FILE *fp;
