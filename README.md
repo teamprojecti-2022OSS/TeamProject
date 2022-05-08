@@ -1,12 +1,12 @@
 # TeamProject
 ## mini project 주제
 
-- **카페 주문과 주차관리**
+- **카페 주문과 주차관리** ☕  🅿️
 
 ## mini project 에 대한 소개
 
 - 카페에서 **사장님**은 메뉴를 **추가, 수정, 삭제**할 수 있고, **손님**들은 메뉴를 **조회,주문**을 할 수 있다.
-- 주차를 한 손님들은 나갈 때 **주차요금**도 알 수 있다.
+- 주차를 한 손님들은 나갈 때 **주차요금**도 알 수 있다. 💰
 
 ## image(pixabay 등 무료 이미지 활용)    
 <img src="image1(commit).jpg" alt="image2" style="zoom:50%;" /><img src="image2(commit).jpg" alt="image2" style="zoom:50%;" />   
