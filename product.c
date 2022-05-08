@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "product.h>
+#include "product.h"
 
 int selectMenu(){
     int menu;
@@ -30,7 +30,7 @@ int createProduct(Product *p) {
 }
 
 void readProduct(Product p){
-    printf("%-15s %-20s %-10d원,p->name,p->detail,&p->price);
+    printf("%-15s %-20s %-10d원",p.name,p.detail,&p.price);
 }
 	   
 int updateProduct(Product *p){
