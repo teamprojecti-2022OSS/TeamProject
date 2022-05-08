@@ -13,4 +13,4 @@ int selectProductNo(Product *p, int count); //원하는 메뉴 선택
 void saveData(Product *p, int count); //FILE 저장 
 int loadData(Produt *p); //FILE 로드
 void searchProductName(Product *p, int count); //제품명으로 검색
-
+int changePassword(int oldPassword);//비밀번호 변경

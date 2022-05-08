@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include "product.h>
+#include "product.h"
 
 int selectMenu(){
     int menu;
     printf("\n*** 주헌&예준 cafe ***\n");
-    printf("1. 메뉴조회\n");
-    printf("2. 메뉴추가\n");
+    printf("1. 메뉴추가\n");
+    printf("2. 메뉴조회\n");
     printf("3. 메뉴수정\n");
     printf("4. 메뉴삭제\n");
     printf("5. 메뉴저장\n");
@@ -30,7 +30,7 @@ int createProduct(Product *p) {
 }
 
 void readProduct(Product p){
-    printf("%-15s %-20s %-10d원,p->name,p->detail,&p->price);
+    printf("%-15s %-20s %-10d원",p.name,p.detail,&p.price);
 }
 	   
 int updateProduct(Product *p){
@@ -87,6 +87,16 @@ int loadData(Product *p) {
 
 
 }
-
+int changePassword(int oldPassword){
+    int newPassword,check;
+    do{
+    printf("현재 비밀번호를 입력하시오.");
+    scanf("%d",&check);
+    if(check!=oldPassword) printf("비밀번호가 잘못되었습니다.\n");
+    }while(check!=oldPassword);
+    printf("바꾸실 비밀번호를 입력하시오.(번호로만 설정가능)");
+    scanf("%d",&newPassword);
+    return newPassword;
+}
 void searchProductName();
 
