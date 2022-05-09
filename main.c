@@ -28,12 +28,7 @@ if(mode==1){
                 count += createProduct(&plist[index++]);
             }
             else if (menu == 2){
-                int no = selectProductNo(plist, index);
-                if(no==0) {
-                printf("=> 취소됨!\n");
-                continue;
-                }
-                readProduct(plist[no-1]);
+                listProduct(plist, index);
             }
             else if (menu == 3){
                 int no = selectProductNo(plist, index);
@@ -75,4 +70,4 @@ if(mode==1){
             printf("종료됨!\n");
             return 0;
     }
-} 
+}   
