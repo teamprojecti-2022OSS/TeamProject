@@ -86,7 +86,7 @@ int loadData(Product *p) {
     	FILE *fp;
         if(fp = fopen("menulist.txt","rt")) {
         for(i=0; i<100; i++) {
-        if(feof(fp)) break;
+        if(feof(fp)!=0) break;
 	fscanf(fp, " %[^\n]", p[i].name);
         fscanf(fp, " %[^\n]", p[i].detail);
         fscanf(fp, " %d", &p[i].price);
