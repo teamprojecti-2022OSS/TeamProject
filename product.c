@@ -21,34 +21,40 @@ int selectMenu(){
 int createProduct(Product *p) {
 
 	printf("메뉴명을 입력해주세요 : ");
-	scanf(" %[^\n]", p->name);
+	scanf(" %[^\n]s", p->name);
+    getchar();
 	printf("메뉴를 설명해주세요 : ");
-        scanf(" %[^\n]", p->detail);
+    scanf(" %[^\n]s", p->detail);
+    getchar();
 	printf("메뉴의 가격을 입력해주세요 : ");
-        scanf(" %d", &p->price);
+    scanf(" %d", &p->price);
 
 }
 
 void readProduct(Product p){
-    printf("%-15s %-20s %-10d원",p.name,p.detail,&p.price);
+    printf("%-15s %-20s %-10d",p.name,p.detail,&p.price);
 }
 
 void listProduct(Product *p, int count) {
-	printf("**********************");
+	printf("======================================================================\n");
+    printf("||   메뉴             || 세부사항                      || 가격       ||\n");
+    printf("||====================||===============================||============||\n");
 	for(int i=0; i<count; i++) {
 		if (p[i].price == -1) continue;
-
-		printf("\n %d.", i+1);
-		printf("%-15s %-20s %-10d원",p[i].name,p[i].detail,&p[i].price);
+		printf("||%d. ", i+1);
+		printf("%-16s || %-30s|| %-10d ||\n",p[i].name,p[i].detail,p[i].price);
 	}
+    printf("======================================================================\n");
 }
 
 int updateProduct(Product *p){
+    getchar();
     printf("새 메뉴명은? ");
     scanf("%[^\n]s",p->name);
     getchar();
     printf("새 메뉴를 설명해주세요 : ");
-    scanf(" %[^\n]", p->detail);
+    scanf(" %[^\n]s", p->detail);
+    getchar();
     printf("새 메뉴의 가격을 입력해주세요 : ");
     scanf(" %d", &p->price);
     return 1;
@@ -134,3 +140,4 @@ int loadPassword(){
 }
 
 void searchProductName();
+
