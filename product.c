@@ -138,6 +138,3 @@ int loadPassword(){
         }
         else return 1111;
 }
-
-void searchProductName();
-
