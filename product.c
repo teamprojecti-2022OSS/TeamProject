@@ -138,3 +138,18 @@ int loadPassword(){
         }
         else return 1111;
 }
+//손님모드 함수
+int selectMenu2(){
+    int menu;
+    printf("\n*** 주헌&예준 cafe ***\n");
+    printf("1. 메뉴선택\n");
+    printf("2. 차량번호 입력\n");
+    printf("3. 주차요금 출력\n");
+    printf("4. 영수증 출력\n");
+    printf("5. 본인순서 출력\n");
+    printf("0. 종료\n\n");
+    printf("=> 원하는 메뉴는? ");
+    scanf("%d", &menu);
+    getchar();
+    return menu;
+}
