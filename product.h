@@ -4,6 +4,13 @@ typedef struct {
 	int price;
 } Product;
 
+typedef struct {
+	int menuNum[20];//주문하는 메뉴번호
+	char placeEat[5];//포장 or 매장
+	int carNum;//주차번호
+	int cometime;//입장시간
+} Custom;
+
 int selectMenu();//선택지 제공(점장모드)
 int selectMenu2();//선택지 제공(손님모드)
 int createProduct(Product *p); //메뉴를 추가
