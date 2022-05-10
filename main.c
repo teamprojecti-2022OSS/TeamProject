@@ -70,4 +70,28 @@ if(mode==1){
             printf("종료됨!\n");
             return 0;
     }
+if(mode==2){
+    while (1){
+            menu = selectMenu2();
+            if (menu == 0) break;
+            if (menu == 1){
+                int no = selectProductNo(plist, index);
+            }
+            else if (menu == 2){
+                
+            }
+            else if (menu == 3){
+               
+            }
+            else if (menu == 4){
+               
+            }
+            else if (menu == 5){
+                
+            }
+            
+            }
+            printf("종료됨!\n");
+            return 0;
+    }
 }   
