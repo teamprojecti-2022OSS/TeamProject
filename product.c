@@ -165,18 +165,16 @@ void checkCarnum(Custom *c){
     scanf("%d",&c->cometime);
 }
 
-void printParkingfee(Custom *c,int count){
+int printParkingorder(Custom *c,int count){
     int inputcarNum;//입력받는 주차번호를 받는 변수
     printf("주차번호는?");
     scanf("%d",&inputcarNum);
-    searchCarnum(*c,inputcarNum,count);
-}
-int searchCarNum(Custom *c,int CustomCarNum, int count){
     for(int i=0; i<count;i++){
-        if(c[i].carNum==CustomCarNum) return i;
+        if(c[i].carNum==inputcarNum) return i;
     }
     return -1;
 }
+
 int printCometime(Custom *c,int CarNum){
     return(c[CarNum].cometime);
 }
