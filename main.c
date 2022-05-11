@@ -75,7 +75,12 @@ if(mode==2){
             menu = selectMenu2();
             if (menu == 0) break;
             if (menu == 1){
+                int check;//주문이 끝났는지 확인하는 변수
+                do{
                 int no = selectProductNo(plist, index);
+                printf("더 주문하시겠습니까?(예:1, 아니요:2)");
+                scanf("%d",&check);
+                }while(check==1);
             }
             else if (menu == 2){
                 
