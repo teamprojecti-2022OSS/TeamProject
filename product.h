@@ -26,7 +26,6 @@ int selectProductNo(Product *p, int count); //원하는 메뉴 선택
 int loadPassword();//비밀번호 불러오기
 void checkTakeout(Custom *c);//포장인지 주문인지 파악
 void checkCarnum(Custom *c);//차번호와 들어온 시간을 저장
-void printParkingfee(Custom *c,int count);//주차요금을 출력해주는 함수
-int searchCarNum(int CustomCarNum, int count);//차량번호를 찾고 들어온 시간을 출력해주는 함수
+int printParkingorder(Custom *c,int count);//고객님의 차번호가 있는 순서를 반환해주는 함수
 int printCometime(Custom *c,int CarNum);//고객님의 들어온 시간 반환
 int calParkingfee(int cometime);//고객님의 들어온 시간을 가지고, 요금을 반환해주는 함수
