@@ -158,3 +158,9 @@ void checkTakeout(Custom *c){
     printf("매장을 이용하시나요? 포장 주문을 하시나요? (매장이용: C, 포장: T)");
     scanf("%s",c->placeEat);
 }
+void checkCarnum(Custom *c){
+    printf("차번호를 입력하시오. ");
+    scanf("%d",&c->carNum);
+    printf("들어온 시간을 입력하시오.");
+    scanf("%d",&c->cometime);
+}
