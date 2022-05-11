@@ -89,7 +89,7 @@ if(mode==2){
             }
             else if (menu == 2){
 		int check;//주차여부 확인
-                printf("주차를 하셨나요?(하셨으면 1, 하지 않으셨으면 2");
+                printf("주차를 하셨나요?(하셨으면 1, 하지 않으셨으면 2) ");
                 scanf("%d",&check);
                 if(check==1)
                 checkCarnum(&clist[index2]);
