@@ -96,7 +96,22 @@ if(mode==2){
                 
             }
             else if (menu == 3){
-               
+               int check;//주차요금 출력여부 확인
+                int order;//검색한 차량번호가 있는 고객님의 순서
+                int cometime;//고객님의 들어온 시간값을 받는 변수
+                int parkingfee;
+                printf("주차요금을 출력하시겠나요?(예 1, 아니요 2) ");
+                scanf("%d",&check);
+                if(check==1)
+                order=printParkingfee(clist,index2);
+                if(order==-1){
+                    printf("검색하신 차량이 없습니다.");
+                }
+                else {
+                    cometime=printCometime(clist,order);
+                    parkingfee=calParkingfee(cometime);
+                    printf("주차요금은 %d원입니다.",parkingfee*500);
+                }
             }
             else if (menu == 4){
                
