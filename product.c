@@ -164,3 +164,32 @@ void checkCarnum(Custom *c){
     printf("들어온 시간을 입력하시오.");
     scanf("%d",&c->cometime);
 }
+
+void printParkingfee(Custom *c,int count){
+    int inputcarNum;//입력받는 주차번호를 받는 변수
+    printf("주차번호는?");
+    scanf("%d",&inputcarNum);
+    searchCarnum(*c,inputcarNum,count);
+}
+int searchCarNum(Custom *c,int CustomCarNum, int count){
+    for(int i=0; i<count;i++){
+        if(c[i].carNum==CustomCarNum) return i;
+    }
+    return -1;
+}
+int printCometime(Custom *c,int CarNum){
+    return(c[CarNum].cometime);
+}
+
+int calParkingfee(int cometime){
+    int outtime;//고객님의 나가는 시간값을 받는 변수
+    int runtime=0;//고객님이 있었던 시간
+    printf("지금 나가는 시간은?");
+    scanf("%d",&outtime);
+    runtime=outime-cometime;
+    if(runtime<90) return 0;
+    else {
+        if((runtime-90)%10==0) return ((runtime-90)/10);
+        else return ((runtime-90)/10+1);
+    }
+}
