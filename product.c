@@ -153,3 +153,8 @@ int selectMenu2(){
     getchar();
     return menu;
 }
+
+void checkTakeout(Custom *c){
+    printf("매장을 이용하시나요? 포장 주문을 하시나요? (매장이용: C, 포장: T)");
+    scanf("%s",c->placeEat);
+}
