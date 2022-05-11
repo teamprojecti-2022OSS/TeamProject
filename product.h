@@ -24,3 +24,4 @@ void searchProductName(Product *p, int count); //제품명으로 검색
 int changePassword(int oldPassword);//비밀번호 변경
 int selectProductNo(Product *p, int count); //원하는 메뉴 선택
 int loadPassword();//비밀번호 불러오기
+void checkTakeout(Custom *c);//포장인지 주문인지 파악
