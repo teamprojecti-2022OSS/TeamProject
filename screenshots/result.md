@@ -21,8 +21,11 @@
 ![메뉴리스트작성](https://user-images.githubusercontent.com/100466772/168306122-033de511-f38c-41ad-a947-f2563cd5ee78.PNG)
 - **메뉴선택 함수**
 ![메뉴선택 함수](https://user-images.githubusercontent.com/100466772/168306743-9266511e-a8e4-4865-9381-f21875c2c768.PNG)
-
-- **차량번호 입력함수**
-- **주차요금 출력함수**
 - **영수증 출력함수**
+![영수증 출력함수](https://user-images.githubusercontent.com/100466772/168311711-7df0e9b3-ff2b-447c-aa4d-f91b9ae2595d.PNG)
+- **차량번호 입력함수**
+![차량번호 입력함수](https://user-images.githubusercontent.com/100466772/168311750-957527f7-69f1-4c4d-89d6-f353666e1d74.PNG)
+- **주차요금 출력함수**
+![주차요금 출력함수](https://user-images.githubusercontent.com/100466772/168311783-a12f2e13-b7d5-49bd-8175-dc5474ee209e.PNG)
 - **본인번호 출력함수**
+![본인번호 출력함수](https://user-images.githubusercontent.com/100466772/168314090-9fd7851a-945d-4d9d-8703-b739754f12e3.PNG)
