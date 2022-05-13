@@ -5,12 +5,14 @@
 
 int main (void) {
 	Product plist[50];
+	Custom clist[50]={0};
 	int index = 0;
 	int count =0, menu;
 	int count2 =0, index2=0;//이용한 손님 수를 체크하는 변수
 	int mode;//mode를 선택하도록 한다.
 	int password=1111,inputPassword;//password 초기값과 입력값
 	count = loadData(plist);
+	count2 = loadData2(clist);
 	index = count;
 	index2 = count2;
     password=loadPassword();//비밀번호값 불러오기
@@ -130,6 +132,7 @@ if(mode==2){
             
             }
             printf("종료됨!\n");
+	    saveData2(clist,index2);
             return 0;
     }
 }   
