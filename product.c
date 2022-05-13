@@ -86,8 +86,8 @@ int loadData(Product *p) {
     	FILE *fp;
         if(fp = fopen("menulist.txt","rt")) {
         for(i=0; i<100; i++) {
+        fscanf(fp, " %[^\n]", p[i].name);
         if(feof(fp)!=0) break;
-	fscanf(fp, " %[^\n]", p[i].name);
         fscanf(fp, " %[^\n]", p[i].detail);
         fscanf(fp, " %d", &p[i].price);
         }
@@ -138,33 +138,34 @@ int loadPassword(){
         }
         else return 1111;
 }
+
 //손님모드 함수
 int selectMenu2(){
     int menu;
     printf("\n*** 주헌&예준 cafe ***\n");
-    printf("1. 메뉴선택\n");
-    printf("2. 차량번호 입력\n");
-    printf("3. 주차요금 출력\n");
-    printf("4. 영수증 출력\n");
-    printf("5. 본인순서 출력\n");
-    printf("0. 종료\n\n");
+    printf("1. 메뉴선택          *\n");
+    printf("2. 차량번호 입력     *\n");
+    printf("3. 주차요금 출력     *\n");
+    printf("4. 영수증 출력       *\n");
+    printf("5. 본인번호 출력     *\n");
+    printf("0. 종료              *\n");
+    printf("**********************\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
     getchar();
     return menu;
 }
-
 void checkTakeout(Custom *c){
-    printf("매장을 이용하시나요? 포장 주문을 하시나요? (매장이용: C, 포장: T)");
+    printf("매장을 이용하시나요? 포장 주문을 하시나요? (매장이용: C, 포장: T) ");
     scanf("%s",c->placeEat);
 }
+
 void checkCarnum(Custom *c){
     printf("차번호를 입력하시오.(뒷자리4자리) ");
     scanf("%d",&c->carNum);
     printf("들어온 시간을 입력하시오.(ex,9:30,16:40) ");
     scanf("%d:%d",&c->cometime[0],&c->cometime[1]);
 }
-
 int printParkingorder(Custom *c,int count){
     int inputcarNum;//입력받는 주차번호를 받는 변수
     printf("주차번호는?(뒷자리4자리)");
@@ -209,6 +210,7 @@ void printReceipt(Custom *c, Product *p,int num){
     else printf("%-10d ||    매장   ||\n",total);
     printf("==========================\n");
 }
+
 void saveData2(Custom *c, int count){
     int i=0;
     FILE *fp;
