@@ -29,3 +29,4 @@ void checkCarnum(Custom *c);//차번호와 들어온 시간을 저장
 int printParkingorder(Custom *c,int count);//고객님의 차번호가 있는 순서를 반환해주는 함수
 int printCometime(Custom *c,int CarNum);//고객님의 들어온 시간 반환
 int calParkingfee(int cometime);//고객님의 들어온 시간을 가지고, 요금을 반환해주는 함수
+void printReceipt(Custom *c, Product *p,int num);//영수증 출력해주는 함수0
