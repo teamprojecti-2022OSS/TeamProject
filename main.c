@@ -4,13 +4,17 @@
 
 
 int main (void) {
+	printf("0\n");
 	Product plist[50];
 	int index = 0;
 	int count =0, menu;
 	int mode;//mode를 선택하도록 한다.
+	printf("1");
 	int password=1111,inputPassword;//password 초기값과 입력값
+	printf("2");
 	count = loadData(plist);
 	index = count;
+	printf("3");
     password=loadPassword();//비밀번호값 불러오기
 
 	printf("점장이신가요? 손님이신가요? (점장: 1, 손님:2) ");
