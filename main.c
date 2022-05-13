@@ -116,7 +116,7 @@ if(mode==2){
                     comeminute=printComeminute(clist,order);
                     parkingfee=calParkingfee(comehour,comeminute);
                     printf("1시간 30분까지 무료이고, 이후에는 10분당 500원입니다.\n");
-                    printf("주차요금은 %d원입니다.\n",parkingfee*500);
+                    printf("따라서 주차요금은 %d원입니다.\n",parkingfee*500);
                     }
                 }
             }
