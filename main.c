@@ -128,7 +128,7 @@ if(mode==2){
                printReceipt(clist,plist,index2);
             }
             else if (menu == 5){
-                printf("고객님 번호는 %d번 입니다.\n", index+1);
+                printf("고객님 번호는 %d번 입니다.\n", index2+1);
             }
             
             }
