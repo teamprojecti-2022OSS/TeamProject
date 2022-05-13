@@ -30,3 +30,5 @@ int printParkingorder(Custom *c,int count);//고객님의 차번호가 있는 �
 int printCometime(Custom *c,int CarNum);//고객님의 들어온 시간 반환
 int calParkingfee(int cometime);//고객님의 들어온 시간을 가지고, 요금을 반환해주는 함수
 void printReceipt(Custom *c, Product *p,int num);//영수증 출력해주는 함수0
+void saveData2(Custom *c, int count); //손님에 대한 FILE 저장
+int loadData2(Custom *c); //손님에 대한 FILE 로드
