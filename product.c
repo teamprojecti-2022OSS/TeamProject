@@ -202,4 +202,36 @@ void printReceipt(Custom *c, Product *p,int num){
     if(c[num].placeEat=="T") printf("총 %d입니다. 포장입니다",total);
     else printf("총 %d입니다. 매장이용입니다",total);
 }
+void saveData2(Custom *c, int count){
+    FILE *fp;
+    fp=fopen("custom.txt","a");
+    for(int i=0; i<20;i++){
+        if(c[count].menuNum[i]==0) break;
+        fprintf(fp,"%d ",c[count].menuNum[i]);
+    }
+    fprintf(fp,"%d\n",0);//구분하기 위해 추가함
+    fprintf(fp,"%s\n",c[count].placeEat);
+    fprintf(fp,"%d\n",c[count].carNum);
+    fprintf(fp,"%d\n",c[count].cometime);
+}
 
+int loadData2(Custom *c){
+    int i=0;
+    FILE *fp;
+    fp=fopen("custom.txt","r");
+    if(fp==NULL){
+        printf("=> 아직 손님이 없습니다.\n");
+        return 0;
+    }
+    for(;i<50;i++){
+        if(feof(fp)) break;
+            for(int j=0;j<20;j++){
+                fscanf(fp,"%d",&c[i].menuNum[j]);
+                if(c[i].menuNum[j]==0) break;
+            }
+        fscanf(fp,"%s",c[i].placeEat);
+        fscanf(fp,"%d",&c[i].carNum);
+        fscanf(fp,"%d",&c[i].cometime);
+        }
+    return i;
+}
