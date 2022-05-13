@@ -83,7 +83,6 @@ if(mode==2){
                 int i=0;
                 do {
                 clist[index2].menuNum[i]= selectProductNo(plist, index);
-                printf("%d\n",clist[index2].menuNum[i]);
                 printf("더 주문하시겠습니까?(예:1, 아니요:2)");
                 scanf("%d",&check);
                 i++;
@@ -110,12 +109,14 @@ if(mode==2){
                 if(check==1)
                 order=printParkingorder(clist,index2);
                 if(order==-1){
-                    printf("검색하신 차량이 없습니다.");
+                    printf("검색하신 차량이 없습니다.\n");
                     }
                 else {
-                    cometime=printCometime(clist,order);
-                    parkingfee=calParkingfee(cometime);
-                    printf("주차요금은 %d원입니다.",parkingfee*500);
+                    comehour=printComehour(clist,order);
+                    comeminute=printComeminute(clist,order);
+                    parkingfee=calParkingfee(comehour,comeminute);
+                    printf("1시간 30분까지 무료이고, 이후에는 10분당 500원입니다.\n");
+                    printf("주차요금은 %d원입니다.\n",parkingfee*500);
                     }
                 }
             }
@@ -127,7 +128,7 @@ if(mode==2){
                printReceipt(clist,plist,index2);
             }
             else if (menu == 5){
-                
+                printf("고객님 번호는 %d번 입니다.\n", index+1);
             }
             
             }
