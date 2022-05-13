@@ -202,12 +202,12 @@ void printReceipt(Custom *c, Product *p,int num){
         if(c[num].menuNum[i]==0) break;
         total+=p[c[num].menuNum[i]-1].price;
     }
-    printf("\n**************************\n");
-    printf("총 금액    ||  이용방법  *\n");
+    printf("\n==========================\n");
+    printf("총 금액    ||  이용방법  ||\n");
     printf("==========================\n");
-    if(strcmp(c[num].placeEat,"T")==0) printf("%-10d ||    포장    *\n",total);
-    else printf("%-10d ||    매장    *\n",total);
-    printf("**************************\n");
+    if(strcmp(c[num].placeEat,"T")==0) printf("%-10d ||    포장   ||\n",total);
+    else printf("%-10d ||    매장   ||\n",total);
+    printf("==========================\n");
 }
 void saveData2(Custom *c, int count){
     int i=0;
