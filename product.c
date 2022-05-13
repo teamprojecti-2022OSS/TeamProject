@@ -159,15 +159,15 @@ void checkTakeout(Custom *c){
     scanf("%s",c->placeEat);
 }
 void checkCarnum(Custom *c){
-    printf("차번호를 입력하시오. ");
+    printf("차번호를 입력하시오.(뒷자리4자리) ");
     scanf("%d",&c->carNum);
-    printf("들어온 시간을 입력하시오.");
-    scanf("%d",&c->cometime);
+    printf("들어온 시간을 입력하시오.(ex,9:30,16:40) ");
+    scanf("%d:%d",&c->cometime[0],&c->cometime[1]);
 }
 
 int printParkingorder(Custom *c,int count){
     int inputcarNum;//입력받는 주차번호를 받는 변수
-    printf("주차번호는?");
+    printf("주차번호는?(뒷자리4자리)");
     scanf("%d",&inputcarNum);
     for(int i=0; i<count;i++){
         if(c[i].carNum==inputcarNum) return i;
@@ -175,16 +175,20 @@ int printParkingorder(Custom *c,int count){
     return -1;
 }
 
-int printCometime(Custom *c,int CarNum){
-    return(c[CarNum].cometime);
+int printComehour(Custom *c,int CarNum){
+    return(c[CarNum].cometime[0]);
+}
+int printComeminute(Custom *c,int CarNum){
+    return(c[CarNum].cometime[1]);
 }
 
-int calParkingfee(int cometime){
-    int outtime;//고객님의 나가는 시간값을 받는 변수
+int calParkingfee(int comehour, int comeminute){
+    int outhour,outminute;//고객님의 나가는 시간값을 받는 변수
     int runtime=0;//고객님이 있었던 시간
-    printf("지금 나가는 시간은?");
-    scanf("%d",&outtime);
-    runtime=outime-cometime;
+    printf("지금 나가는 시간은?(ex,9:30,16:40) ");
+    scanf("%d:%d",&outhour,&outminute);
+    runtime=(outhour-comehour)*60+(outminute-comeminute);
+    printf("%d",runtime);
     if(runtime<90) return 0;
     else {
         if((runtime-90)%10==0) return ((runtime-90)/10);
@@ -194,25 +198,26 @@ int calParkingfee(int cometime){
 
 void printReceipt(Custom *c, Product *p,int num){
     int total=0;//주문한 것들의 총합
-    printf("%d",c[num].menuNum[0]);
     for(int i=0; i<20; i++){
         if(c[num].menuNum[i]==0) break;
         total+=p[c[num].menuNum[i]-1].price;
     }
-    if(c[num].placeEat=="T") printf("총 %d입니다. 포장입니다",total);
-    else printf("총 %d입니다. 매장이용입니다",total);
+    if(strcmp(c[num].placeEat,"T")==0) printf("총 %d입니다.\n 포장입니다\n",total);
+    else printf("총 %d입니다.\n 매장이용입니다\n",total);
 }
 void saveData2(Custom *c, int count){
+    int i=0;
     FILE *fp;
     fp=fopen("custom.txt","a");
-    for(int i=0; i<20;i++){
+    for(; i<20;i++){
         if(c[count].menuNum[i]==0) break;
         fprintf(fp,"%d ",c[count].menuNum[i]);
     }
+    if(i==0) return;
     fprintf(fp,"%d\n",0);//구분하기 위해 추가함
     fprintf(fp,"%s\n",c[count].placeEat);
     fprintf(fp,"%d\n",c[count].carNum);
-    fprintf(fp,"%d\n",c[count].cometime);
+    fprintf(fp,"%d:%d\n",c[count].cometime[0],c[count].cometime[0]);
 }
 
 int loadData2(Custom *c){
@@ -231,7 +236,7 @@ int loadData2(Custom *c){
             }
         fscanf(fp,"%s",c[i].placeEat);
         fscanf(fp,"%d",&c[i].carNum);
-        fscanf(fp,"%d",&c[i].cometime);
+        fscanf(fp,"%d:%d",&c[i].cometime[0],&c[i].cometime[1]);
         }
     return i;
 }
