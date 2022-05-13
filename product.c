@@ -42,7 +42,8 @@ void listProduct(Product *p, int count) {
 	for(int i=0; i<count; i++) {
 		if (p[i].price == -1) continue;
 		printf("||%d. ", i+1);
-		printf("%-16s || %-30s|| %-10d ||\n",p[i].name,p[i].detail,p[i].price);
+		if(i>=9) printf("%-15s || %-30s|| %-10d ||\n",p[i].name,p[i].detail,p[i].price);
+		else printf("%-16s || %-30s|| %-10d ||\n",p[i].name,p[i].detail,p[i].price);
 	}
     printf("======================================================================\n");
 }
