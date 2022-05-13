@@ -191,3 +191,15 @@ int calParkingfee(int cometime){
         else return ((runtime-90)/10+1);
     }
 }
+
+void printReceipt(Custom *c, Product *p,int num){
+    int total=0;//주문한 것들의 총합
+    printf("%d",c[num].menuNum[0]);
+    for(int i=0; i<20; i++){
+        if(c[num].menuNum[i]==0) break;
+        total+=p[c[num].menuNum[i]-1].price;
+    }
+    if(c[num].placeEat=="T") printf("총 %d입니다. 포장입니다",total);
+    else printf("총 %d입니다. 매장이용입니다",total);
+}
+
