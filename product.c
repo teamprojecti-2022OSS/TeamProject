@@ -138,3 +138,112 @@ int loadPassword(){
         }
         else return 1111;
 }
+
+//손님모드 함수
+int selectMenu2(){
+    int menu;
+    printf("\n*** 주헌&예준 cafe ***\n");
+    printf("1. 메뉴선택          *\n");
+    printf("2. 차량번호 입력     *\n");
+    printf("3. 주차요금 출력     *\n");
+    printf("4. 영수증 출력       *\n");
+    printf("5. 본인번호 출력     *\n");
+    printf("0. 종료              *\n");
+    printf("**********************\n\n");
+    printf("=> 원하는 메뉴는? ");
+    scanf("%d", &menu);
+    getchar();
+    return menu;
+}
+void checkTakeout(Custom *c){
+    printf("매장을 이용하시나요? 포장 주문을 하시나요? (매장이용: C, 포장: T) ");
+    scanf("%s",c->placeEat);
+}
+
+void checkCarnum(Custom *c){
+    printf("차번호를 입력하시오.(뒷자리4자리) ");
+    scanf("%d",&c->carNum);
+    printf("들어온 시간을 입력하시오.(ex,9:30,16:40) ");
+    scanf("%d:%d",&c->cometime[0],&c->cometime[1]);
+}
+int printParkingorder(Custom *c,int count){
+    int inputcarNum;//입력받는 주차번호를 받는 변수
+    printf("주차번호는?(뒷자리4자리)");
+    scanf("%d",&inputcarNum);
+    for(int i=0; i<count;i++){
+        if(c[i].carNum==inputcarNum) return i;
+    }
+    return -1;
+}
+
+int printComehour(Custom *c,int CarNum){
+    return(c[CarNum].cometime[0]);
+}
+int printComeminute(Custom *c,int CarNum){
+    return(c[CarNum].cometime[1]);
+}
+
+int calParkingfee(int comehour, int comeminute){
+    int outhour,outminute;//고객님의 나가는 시간값을 받는 변수
+    int runtime=0;//고객님이 있었던 시간
+    printf("지금 나가는 시간은?(ex,9:30,16:40) ");
+    scanf("%d:%d",&outhour,&outminute);
+    runtime=(outhour-comehour)*60+(outminute-comeminute);
+    printf("%d",runtime);
+    if(runtime<90) return 0;
+    else {
+        if((runtime-90)%10==0) return ((runtime-90)/10);
+        else return ((runtime-90)/10+1);
+    }
+}
+
+void printReceipt(Custom *c, Product *p,int num){
+    int total=0;//주문한 것들의 총합
+    for(int i=0; i<20; i++){
+        if(c[num].menuNum[i]==0) break;
+        total+=p[c[num].menuNum[i]-1].price;
+    }
+    printf("\n==========================\n");
+    printf("총 금액    ||  이용방법  ||\n");
+    printf("==========================\n");
+    if(strcmp(c[num].placeEat,"T")==0) printf("%-10d ||    포장   ||\n",total);
+    else printf("%-10d ||    매장   ||\n",total);
+    printf("==========================\n");
+}
+
+void saveData2(Custom *c, int count){
+    int i=0;
+    FILE *fp;
+    fp=fopen("custom.txt","a");
+    for(; i<20;i++){
+        if(c[count].menuNum[i]==0) break;
+        fprintf(fp,"%d ",c[count].menuNum[i]);
+    }
+    if(i==0) return;
+    fprintf(fp,"%d\n",0);//구분하기 위해 추가함
+    fprintf(fp,"%s\n",c[count].placeEat);
+    fprintf(fp,"%d\n",c[count].carNum);
+    fprintf(fp,"%d:%d\n",c[count].cometime[0],c[count].cometime[0]);
+}
+
+int loadData2(Custom *c){
+    int i=0;
+    FILE *fp;
+    fp=fopen("custom.txt","r");
+    if(fp==NULL){
+        printf("=> 아직 손님이 없습니다.\n");
+        return 0;
+    }
+    for(;i<50;i++){
+        if(feof(fp)) break;
+            for(int j=0;j<20;j++){
+                fscanf(fp,"%d",&c[i].menuNum[j]);
+                if(c[i].menuNum[j]==0) break;
+            }
+        fscanf(fp,"%s",c[i].placeEat);
+        fscanf(fp,"%d",&c[i].carNum);
+        fscanf(fp,"%d:%d",&c[i].cometime[0],&c[i].cometime[1]);
+        }
+    return i;
+}
+>>>>>>> 8d53014308fd8f4494ee5c6e17076ff7088eb73b
