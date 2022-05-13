@@ -190,7 +190,7 @@ int calParkingfee(int comehour, int comeminute){
     printf("지금 나가는 시간은?(ex,9:30,16:40) ");
     scanf("%d:%d",&outhour,&outminute);
     runtime=(outhour-comehour)*60+(outminute-comeminute);
-    printf("총 %d 사용하셨습니다.\n",runtime);
+    printf("총 %d분 사용하셨습니다.\n",runtime);
     if(runtime<90) return 0;
     else {
         if((runtime-90)%10==0) return ((runtime-90)/10);
