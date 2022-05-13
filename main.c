@@ -80,12 +80,13 @@ if(mode==2){
                int check;//주문이 끝났는지 확인하는 변수
                 int i=0;
                 do {
-                clist[index2].menuNum[i] = selectProductNo(plist, index);
+                clist[index2].menuNum[i]= selectProductNo(plist, index);
+                printf("%d\n",clist[index2].menuNum[i]);
                 printf("더 주문하시겠습니까?(예:1, 아니요:2)");
                 scanf("%d",&check);
                 i++;
                 } while(check==1);
-                checkTakeout(&clist[index2++]);
+                checkTakeout(&clist[index2]);
             }
             else if (menu == 2){
 		int check;//주차여부 확인
@@ -117,7 +118,11 @@ if(mode==2){
                 }
             }
             else if (menu == 4){
-               
+               int check;//주차여부 확인
+                printf("영수증을 출력하시겠습니까?(출력 1, 출력을 원하지 않으면 2) ");
+                scanf("%d",&check);
+                if(check==1)
+               printReceipt(clist,plist,index2);
             }
             else if (menu == 5){
                 
