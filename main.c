@@ -83,11 +83,12 @@ if(mode==2){
                 int i=0;
                 do {
                 clist[index2].menuNum[i]= selectProductNo(plist, index);
+		if(clist[index2].menuNum[i]==0) break;
                 printf("더 주문하시겠습니까?(예:1, 아니요:2)");
                 scanf("%d",&check);
                 i++;
                 } while(check==1);
-                checkTakeout(&clist[index2]);
+                if(clist[index2].menuNum[i]!=0) checkTakeout(&clist[index2]);
             }
             else if (menu == 2){
 		int check;//주차여부 확인
