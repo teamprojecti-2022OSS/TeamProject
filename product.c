@@ -107,11 +107,11 @@ int loadData(Product *p) {
 int changePassword(int oldPassword){
     int newPassword,check;
     do{
-    printf("현재 비밀번호를 입력하시오.");
+    printf("현재 비밀번호를 입력하세요.");
     scanf("%d",&check);
     if(check!=oldPassword) printf("비밀번호가 잘못되었습니다.\n");
     }while(check!=oldPassword);
-    printf("바꾸실 비밀번호를 입력하시오. (1부터 9번호로만 설정가능)");
+    printf("바꾸실 비밀번호를 입력하세요. (1부터 9번호로만 설정가능)");
     scanf("%d",&newPassword);
     FILE *fp;
 	fp = fopen("password.txt", "wt");
@@ -162,14 +162,14 @@ void checkTakeout(Custom *c){
 }
 
 void checkCarnum(Custom *c){
-    printf("차번호를 입력하시오.(뒷자리4자리) ");
+    printf("차량번호를 입력하세요.(뒷자리4자리) ");
     scanf("%d",&c->carNum);
-    printf("들어온 시간을 입력하시오.(ex,9:30,16:40) ");
+    printf("들어온 시간을 입력하세요.(ex,9:30,16:40) ");
     scanf("%d:%d",&c->cometime[0],&c->cometime[1]);
 }
 int printParkingorder(Custom *c,int count){
     int inputcarNum;//입력받는 주차번호를 받는 변수
-    printf("주차번호는?(뒷자리4자리)");
+    printf("주차한 차량의 차량번호는?(뒷자리4자리)");
     scanf("%d",&inputcarNum);
     for(int i=0; i<count;i++){
         if(c[i].carNum==inputcarNum) return i;
@@ -247,4 +247,3 @@ int loadData2(Custom *c){
         }
     return i;
 }
->>>>>>> 8d53014308fd8f4494ee5c6e17076ff7088eb73b
