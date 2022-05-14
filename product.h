@@ -20,7 +20,6 @@ int deletProduct(Product *p); //메뉴 삭제
 void listProduct(Product *p, int count); //메뉴 리스트 조회
 void saveData(Product *p, int count); // 메뉴에 대한 FILE 저장 
 int loadData(Product *p); //메뉴에 대한 FILE 로드
-void searchProductName(Product *p, int count); //제품명으로 검색
 int changePassword(int oldPassword);//비밀번호 변경
 int selectProductNo(Product *p, int count); //원하는 메뉴 선택
 int loadPassword();//비밀번호 불러오기

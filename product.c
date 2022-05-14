@@ -22,12 +22,12 @@ int createProduct(Product *p) {
 
 	printf("메뉴명을 입력해주세요 : ");
 	scanf(" %[^\n]s", p->name);
-    getchar();
+    	getchar();
 	printf("메뉴를 설명해주세요 : ");
-    scanf(" %[^\n]s", p->detail);
-    getchar();
+    	scanf(" %[^\n]s", p->detail);
+    	getchar();
 	printf("메뉴의 가격을 입력해주세요 : ");
-    scanf(" %d", &p->price);
+    	scanf(" %d", &p->price);
 
 }
 
@@ -86,11 +86,11 @@ int loadData(Product *p) {
 	int i;
     	FILE *fp;
         if(fp = fopen("menulist.txt","rt")) {
-        for(i=0; i<100; i++) {
-        fscanf(fp, " %[^\n]", p[i].name);
-        if(feof(fp)!=0) break;
-        fscanf(fp, " %[^\n]", p[i].detail);
-        fscanf(fp, " %d", &p[i].price);
+        	for(i=0; i<100; i++) {
+        	fscanf(fp, " %[^\n]", p[i].name);
+        	if(feof(fp)) break;
+        	fscanf(fp, " %[^\n]", p[i].detail);
+        	fscanf(fp, " %d", &p[i].price);
         }
 
         fclose(fp);
@@ -98,8 +98,8 @@ int loadData(Product *p) {
         return i;
         }
         else {
-        printf("\n=> 파일 없음\n");
-        return 0;
+        	printf("\n=> 파일 없음\n");
+        	return 0;
     }
 
 
@@ -247,3 +247,4 @@ int loadData2(Custom *c){
         }
     return i;
 }
+>>>>>>> 8d53014308fd8f4494ee5c6e17076ff7088eb73b
