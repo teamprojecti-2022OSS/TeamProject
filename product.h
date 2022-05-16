@@ -14,13 +14,13 @@ typedef struct {
 int selectMenu();//선택지 제공(점장님모드)
 int selectMenu2();//선택지 제공(손님모드)
 int createProduct(Product *p); //메뉴를 추가
-void readProduct(Product p); //메뉴 조회
 int updateProduct(Product *p); //메뉴 수정
 int deletProduct(Product *p); //메뉴 삭제
 void listProduct(Product *p, int count); //메뉴 리스트 조회
 void saveData(Product *p, int count); // 메뉴에 대한 FILE 저장 
 int loadData(Product *p); //메뉴에 대한 FILE 로드
 int changePassword(int oldPassword);//비밀번호 변경
+int selectProductNo(Product *p, int count); //원하는 메뉴 선택
 int loadPassword();//비밀번호 불러오기
 void checkTakeout(Custom *c);//포장인지 주문인지 파악
 void checkCarnum(Custom *c);//차번호와 들어온 시간을 저장
