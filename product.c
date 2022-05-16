@@ -31,10 +31,6 @@ int createProduct(Product *p) {
 
 }
 
-void readProduct(Product p){
-    printf("%-15s %-20s %-10d",p.name,p.detail,&p.price);
-}
-
 void listProduct(Product *p, int count) {
 	printf("======================================================================\n");
     printf("||   메뉴             || 세부사항                      || 가격       ||\n");
