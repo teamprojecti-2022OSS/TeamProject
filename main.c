@@ -4,7 +4,6 @@
 
 
 int main (void) {
-	printf("0\n");
 	Product plist[50];
     Custom clist[50]={0};
 	int index = 0;
