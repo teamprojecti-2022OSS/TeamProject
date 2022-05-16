@@ -21,7 +21,6 @@ void listProduct(Product *p, int count); //메뉴 리스트 조회
 void saveData(Product *p, int count); // 메뉴에 대한 FILE 저장 
 int loadData(Product *p); //메뉴에 대한 FILE 로드
 int changePassword(int oldPassword);//비밀번호 변경
-int selectProductNo(Product *p, int count); //원하는 메뉴 선택
 int loadPassword();//비밀번호 불러오기
 void checkTakeout(Custom *c);//포장인지 주문인지 파악
 void checkCarnum(Custom *c);//차번호와 들어온 시간을 저장
